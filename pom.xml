@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ken-International</groupId>
-	<artifactId>spring-boot-Rest</artifactId>
+	<artifactId>microservices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-Rest</name>
 	<description>Demo project for Spring Boot</description>
