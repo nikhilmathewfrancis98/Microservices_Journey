@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.kenInternational.Entity","com.kenInternational.controller","com.kenInternational.Service","com.kenInternational.Repository","com.kenInternational.project_Config"})
+@ComponentScan(basePackages = {"com.kenInternational.mapper","com.kenInternational.Entity","com.kenInternational.controller","com.kenInternational.Service","com.kenInternational.Repository","com.kenInternational.project_Config"})
 public class SpringBootRestApplication extends SpringBootServletInitializer implements CommandLineRunner {
 	@Autowired
 	private ApplicationContext appContext;
