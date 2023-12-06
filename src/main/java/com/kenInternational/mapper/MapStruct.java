@@ -3,7 +3,6 @@ package com.kenInternational.mapper;
 import com.kenInternational.Entity.User;
 import com.kenInternational.dto.UserDto;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -15,7 +14,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface MapStruct {
-    MapStruct Mapper= Mappers.getMapper(MapStruct.class);
+//    MapStruct Mapper= Mappers.getMapper(MapStruct.class);
 //    @Mapping(source = "{fName,lName}",target = "{fName,lName}") //This is used inorder to make the field name map differ in name
     UserDto mapStructUserToDTO(User user);
     User mapStructDTOToUser(UserDto userDTO);

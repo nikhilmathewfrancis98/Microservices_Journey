@@ -7,6 +7,7 @@ import com.kenInternational.dto.UserDto;
 import com.kenInternational.mapper.MapStruct;
 import com.kenInternational.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.mapstruct.factory.Mappers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,7 @@ import java.util.stream.Collectors;
 public class userServiceImpl extends Exception implements userService{
     @Autowired
     private UserRepository userRepository;
-
+   private MapStruct Mapper= Mappers.getMapper(MapStruct.class);
     @Autowired
     public  ModelMapper mapper;
     @Override
@@ -72,15 +73,15 @@ public class userServiceImpl extends Exception implements userService{
     public UserDto getUserByID(Long U_ID) {
         Optional<User> responseData=userRepository.findById(U_ID);
         System.out.println(responseData.get().getFName()+" "+responseData.get().getLName());
-        UserDto response=MapStruct.Mapper.mapStructUserToDTO(responseData.get());
-        System.out.println(response.getNote()+" "+response.getLName()+" "+response.getFName());
+        UserDto response=Mapper.mapStructUserToDTO(responseData.get()); // Using mapstruct
+        System.out.println(response.getLName()+" "+response.getFName()+" "+response.getEmail());
        return response;
 //       return UserMapper.mapToUserDto(responseData.get()) ;
     }
 
     @Override
     public UserDto createUser(UserDto userDto) {
-//       User s= MapStruct.Mapper.mapStructDTOToUser(userDto); // This line of code returns null 
+//       User s= MapStruct.Mapper.mapStructDTOToUser(userDto); // This line of code returns null
 //        log.warn("Inside the Service Impl "+s.getLName()+" "+s.getFName());
         User user1=UserMapper.mapToUser(userDto);
         User response=userRepository.save(user1);

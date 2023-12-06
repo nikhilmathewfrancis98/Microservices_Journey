@@ -2,15 +2,6 @@ package com.kenInternational.mapper;
 
 import com.kenInternational.Entity.User;
 import com.kenInternational.dto.UserDto;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-
-
-
 
 public class UserMapper {
 
